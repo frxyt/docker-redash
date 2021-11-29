@@ -18,9 +18,8 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         gnutls-bin; \
-    rm -rf /var/lib/apt/lists/*;
-
+    rm -rf /var/lib/apt/lists/*; \
+    pip install --upgrade \
+        memsql \
+        mysqlclient;
 USER redash
-RUN set -ex; \
-    pip install mysqlclient --upgrade; \
-    pip install memsql --upgrade;
